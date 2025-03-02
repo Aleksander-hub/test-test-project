@@ -187,29 +187,24 @@
 
     
     
-
-
-     <div id="fullscreen" class="fullscreen" onclick="closeFullscreen()">
-        <img id="fullscreen-img" src="" alt="">
-        <p id="fullscreen-text"></p>
+    <div id="fullscreen" class="fullscreen" onclick="closeFullscreen()">
+        <img id="fullscreen-img" src="" alt="Fullscreen Image">
     </div>
 
     <script>
-        function openCatalog(catalogId) {
-            document.querySelectorAll('.catalog').forEach(catalog => {
-                catalog.style.display = 'none';
-            });
-            document.getElementById(catalogId).style.display = 'block';
+        function openFullscreen(imgElement) {
+            const fullscreenDiv = document.getElementById('fullscreen');
+            const fullscreenImg = document.getElementById('fullscreen-img');
+            fullscreenImg.src = imgElement.src;
+            fullscreenDiv.classList.add('active');
         }
-        function openFullscreen(imageSrc, description) {
-            document.getElementById('fullscreen-img').src = imageSrc;
-            document.getElementById('fullscreen-text').textContent = description;
-            document.getElementById('fullscreen').style.display = 'flex';
-        }
+
         function closeFullscreen() {
-            document.getElementById('fullscreen').style.display = 'none';
+            document.getElementById('fullscreen').classList.remove('active');
         }
     </script>
+
+     
 
 
     
