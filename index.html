@@ -5,13 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Доска объявлений</title>
 
-
-
-
-
 <style>
     body {
-        background: url('background2.jpg') no-repeat center center fixed;
+        background: url('background/background2.jpg') no-repeat center center fixed;
         background-size: cover;
         font-family: Arial, sans-serif;
         color: #333;
@@ -125,91 +121,88 @@
             font-size: 14px;
         }
     }
+
+    
+    .image-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.image-item p {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #333;
+}
+    
 </style>
 
 <body>
-    <h1>Доска объявлений</h1>
+    <h1>Мастерская</h1>
 
     <div class="post-ad">
-        <p>Разместить объявление 8-983-556-88-78.</p>
-    </div>
-    
-
-    <!-- Раздел: Реклама -->
-    <div class="section">
-        <h2>Реклама</h2>
-        <div class="images-container">
-            <img src="ad.jpg" alt="Реклама 1" onclick="openFullscreen(this)">
-            <img src="ad.jpg" alt="Реклама 2" onclick="openFullscreen(this)">
-            <img src="ad.jpg" alt="Реклама 3" onclick="openFullscreen(this)">
-            <img src="ad.jpg" alt="Реклама 4" onclick="openFullscreen(this)">
-            <img src="ad.jpg" alt="Реклама 5" onclick="openFullscreen(this)">
-        </div>
+        <p>Контакты 22-3-3-22</p>
     </div>
 
 
-
     <div class="section">
-    <h2>Услуги</h2>
+    <h2>Чекеры</h2>
     <div class="images-container">
-        <div class="image-wrapper">
-            <img src="menu1.jpg" alt="Услуги 1" onclick="openFullscreen(this)">
-            <a href="katalog1.html" class="catalog-button" target="_blank">Каталог</a>
+        <div class="image-item">
+            <img src="uslugi/ad1.jpg" alt="Услуги 1" onclick="openFullscreen(this)">
+            <p>Описание услуги 1</p>
         </div>
-        <div class="image-wrapper">
-            <img src="menu1.jpg" alt="Услуги 2" onclick="openFullscreen(this)">
-            <a href="ссылка_на_каталог_2" class="catalog-button" target="_blank">Каталог</a>
+        <div class="image-item">
+            <img src="uslugi/ad99.jpg" alt="Услуги 2" onclick="openFullscreen(this)">
+            <p>Описание услуги 2</p>
         </div>
-        <div class="image-wrapper">
-            <img src="menu1.jpg" alt="Услуги 3" onclick="openFullscreen(this)">
-            <a href="ссылка_на_каталог_3" class="catalog-button" target="_blank">Каталог</a>
-        </div>
-        <div class="image-wrapper">
-            <img src="menu1.jpg" alt="Услуги 4" onclick="openFullscreen(this)">
-            <a href="ссылка_на_каталог_4" class="catalog-button" target="_blank">Каталог</a>
-        </div>
-        <div class="image-wrapper">
-            <img src="menu1.jpg" alt="Услуги 5" onclick="openFullscreen(this)">
-            <a href="ссылка_на_каталог_5" class="catalog-button" target="_blank">Каталог</a>
+        <div class="image-item">
+            <img src="uslugi/ad99.jpg" alt="Услуги 3" onclick="openFullscreen(this)">
+            <p>Описание услуги 3</p>
         </div>
     </div>
 </div>
 
-<style>
-    .image-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
 
-    .catalog-button {
-        display: inline-block;
-        margin-top: 5px;
-        padding: 5px 10px;
-        background-color: #007bff;
-        color: #fff;
-        text-decoration: none;
-        border-radius: 5px;
-        font-size: 14px;
-        text-align: center;
-        transition: background 0.3s;
-    }
-
-    .catalog-button:hover {
-        background-color: #0056b3;
-    }
-</style>
-
-
-
-
-    
-    
-    <div id="fullscreen" class="fullscreen" onclick="closeFullscreen()">
-        <img id="fullscreen-img" src="" alt="Fullscreen Image">
+      <div class="section">
+    <h2>Разделочные досточки</h2>
+    <div class="images-container">
+        <div class="image-item">
+            <img src="uslugi/ad1.jpg" alt="Услуги 1" onclick="openFullscreen(this)">
+            <p>Описание услуги 1</p>
+        </div>
+        <div class="image-item">
+            <img src="uslugi/ad99.jpg" alt="Услуги 2" onclick="openFullscreen(this)">
+            <p>Описание услуги 2</p>
+        </div>
+        <div class="image-item">
+            <img src="uslugi/ad99.jpg" alt="Услуги 3" onclick="openFullscreen(this)">
+            <p>Описание услуги 3</p>
+        </div>
     </div>
+</div>
 
-    <script>
+
+      <div class="section">
+    <h2>Столешници</h2>
+    <div class="images-container">
+        <div class="image-item">
+            <img src="uslugi/ad1.jpg" alt="Услуги 1" onclick="openFullscreen(this)">
+            <p>Описание услуги 1</p>
+        </div>
+        <div class="image-item">
+            <img src="uslugi/ad99.jpg" alt="Услуги 2" onclick="openFullscreen(this)">
+            <p>Описание услуги 2</p>
+        </div>
+        <div class="image-item">
+            <img src="uslugi/ad99.jpg" alt="Услуги 3" onclick="openFullscreen(this)">
+            <p>Описание услуги 3</p>
+        </div>
+    </div>
+</div>
+    
+  <script>
         function openFullscreen(imgElement) {
             const fullscreenDiv = document.getElementById('fullscreen');
             const fullscreenImg = document.getElementById('fullscreen-img');
@@ -221,11 +214,6 @@
             document.getElementById('fullscreen').classList.remove('active');
         }
     </script>
-
-     
-
-
-    
-    
 </body>
 </html>
+    
