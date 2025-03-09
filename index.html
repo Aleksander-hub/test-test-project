@@ -122,6 +122,7 @@
         }
     }
 
+
     
 .image-item {
     display: flex;
@@ -138,9 +139,22 @@
     transition: transform 0.3s ease-in-out;
 }
 
-.image-item img.zoomed {
-    transform: scale(2.5);
+.fullscreen-img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    display: none;
 }
+
+.fullscreen-img.active {
+    display: block;
+}
+
 
     
 </style>
@@ -210,9 +224,22 @@
 </div>
     
   <script>
-        function toggleZoom(imgElement) {
-    imgElement.classList.toggle('zoomed');
+      function toggleFullScreen(imgElement) {
+    let fullscreenImg = document.getElementById('fullscreen-image');
+
+    if (!fullscreenImg) {
+        fullscreenImg = document.createElement('img');
+        fullscreenImg.id = 'fullscreen-image';
+        fullscreenImg.classList.add('fullscreen-img');
+        fullscreenImg.onclick = () => fullscreenImg.classList.remove('active');
+        document.body.appendChild(fullscreenImg);
+    }
+
+    fullscreenImg.src = imgElement.src;
+    fullscreenImg.classList.add('active');
 }
+
+ 
 
     </script>
 </body>
