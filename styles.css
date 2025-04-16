@@ -135,3 +135,30 @@ h1 {
 .fullscreen-img.active {
     display: block;
 }
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+.bot-response {
+    background-color: #e0e0e0;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.user-query {
+    background-color: #d0f0c0;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    align-self: flex-end;
+}
