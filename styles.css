@@ -1,1 +1,171 @@
-body { background: url('background45.jpg') no-repeat center center fixed; background-size: cover; font-family: Arial, sans-serif; color: #333; margin: 0; padding: 0; } /* Заголовок страницы */ h1 { text-align: center; font-size: 36px; margin-top: 20px; } /* Строка под заголовком */ .post-ad { text-align: center; font-size: 18px; margin-top: 10px; } /* Контейнер разделов */ .section { margin-bottom: 30px; text-align: center; } /* Контейнер с изображениями */ .images-container { display: flex; gap: 10px; justify-content: flex-start; overflow-x: auto; /* Позволяет листать изображения */ scroll-behavior: smooth; padding: 10px; margin-top: 20px; } /* Изображения внутри контейнера (увеличенный размер) */ .images-container img { width: 210px; /* Увеличиваем размер изображения в 2 раза */ height: auto; border-radius: 10px; cursor: pointer; transition: transform 0.3s; } .images-container img:hover { transform: scale(1.1); } /* Полноэкранное изображение */ .fullscreen { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); display: none; justify-content: center; align-items: center; z-index: 1000; } .fullscreen img { max-width: 90%; max-height: 90%; border-radius: 10px; } .fullscreen.active { display: flex; } /* Медиазапросы для мобильных устройств */ @media (max-width: 768px) { .images-container img { width: 200px; /* Уменьшаем размер изображений на мобильных устройствах */ /* Чтобы изменить размер изображений на мобильных, поменяй значение width */ } h1 { font-size: 24px; } .section h2 { font-size: 20px; } .post-ad { font-size: 16px; } } @media (max-width: 480px) { .images-container img { width: 160px; /* Еще больше уменьшаем изображения на экранах меньше 480px */ /* Измените значение width для настройки размера на маленьких экранах */ } h1 { font-size: 20px; } .section h2 { font-size: 18px; } .post-ad { font-size: 14px; } } .image-item { display: flex; flex-direction: column; align-items: center; text-align: center; } .image-item img { width: 210px; height: auto; border-radius: 10px; cursor: pointer; transition: transform 0.3s ease-in-out; } .fullscreen-img { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: contain; background: rgba(0, 0, 0, 0.8); z-index: 1000; display: none; } .fullscreen-img.active { display: block; } .circular-img { border-radius: 50%; } 
+body {
+    background: url('background45.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    font-size: 36px;
+    margin-top: 20px;
+}
+
+.post-ad {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.section {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.images-container {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.images-container img {
+    width: 210px;
+    height: auto;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.images-container img:hover {
+    transform: scale(1.1);
+}
+
+.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.fullscreen img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+.fullscreen.active {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .images-container img {
+        width: 200px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .section h2 {
+        font-size: 20px;
+    }
+
+    .post-ad {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .images-container img {
+        width: 160px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .section h2 {
+        font-size: 18px;
+    }
+
+    .post-ad {
+        font-size: 14px;
+    }
+}
+
+.image-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.image-item img {
+    width: 210px;
+    height: auto;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.fullscreen-img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    display: none;
+}
+
+.fullscreen-img.active {
+    display: block;
+}
+
+.circular-img {
+    border-radius: 50%;
+}
+
+.carousel {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.carousel img {
+    min-width: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.carousel-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+}
