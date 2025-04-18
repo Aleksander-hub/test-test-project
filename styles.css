@@ -43,7 +43,7 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 
     /* 👇 Уменьшаем ширину карточки */
-  max-width: 200px;
+  max-width: 240px;
   }
   
   .swiper-slide img {
