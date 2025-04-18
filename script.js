@@ -1,38 +1,67 @@
-const swiper = new Swiper('.swiper-container', {
-  loop: true,
-  spaceBetween: 10,
-  slidesPerView: 1.2,
-  centeredSlides: true,
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-  breakpoints: {
-    480: {
-      slidesPerView: 1.5,
-    },
-    768: {
-      slidesPerView: 2.2,
-    },
-    1024: {
-      slidesPerView: 3,
-    }
+* {
+    box-sizing: border-box;
   }
-});
-
-function toggleFullScreen(img) {
-  const fullscreenImg = document.createElement('img');
-  fullscreenImg.src = img.src;
-  fullscreenImg.style.position = 'fixed';
-  fullscreenImg.style.top = '50%';
-  fullscreenImg.style.left = '50%';
-  fullscreenImg.style.transform = 'translate(-50%, -50%)';
-  fullscreenImg.style.maxWidth = '90vw';
-  fullscreenImg.style.maxHeight = '90vh';
-  fullscreenImg.style.zIndex = 9999;
-  fullscreenImg.style.borderRadius = '10px';
-  fullscreenImg.style.boxShadow = '0 0 20px rgba(0,0,0,0.6)';
-  fullscreenImg.style.cursor = 'pointer';
-  fullscreenImg.onclick = () => document.body.removeChild(fullscreenImg);
-  document.body.appendChild(fullscreenImg);
-}
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: "Arial", sans-serif;
+    background: #f5f5f5;
+    color: #222;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin: 16px 0;
+  }
+  
+  .post-ad p {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+  
+  .section h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  /* Swiper */
+  .swiper-container {
+    width: 100%;
+    padding-bottom: 40px;
+  }
+  
+  .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    border-radius: 12px;
+    padding: 10px;
+    margin: 0 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+  
+  .swiper-slide img {
+    width: 100%;
+    max-width: 220px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .swiper-slide img:hover {
+    transform: scale(1.05);
+  }
+  
+  .swiper-slide p {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #444;
+  }
+  
+  .swiper-pagination-bullet {
+    background: #555;
+  }
+  
