@@ -2,18 +2,14 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <title>Мастерская</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="styles.css" />
-
-  <!-- Swiper CSS -->
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-  />
 </head>
 <body>
   <h1>Мастерская</h1>
+
   <div class="post-ad">
     <p>Контакты: 22-3-3-22</p>
   </div>
@@ -24,26 +20,27 @@
     <div class="swiper-container">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <img src="aa1.jpg" alt="Услуга 1" onclick="toggleFullScreen(this)" />
+          <img src="aa1.jpg" alt="Услуги 1" onclick="toggleFullScreen(this)" />
           <p>Описание услуги 1</p>
         </div>
         <div class="swiper-slide">
-          <img src="aa1.jpg" alt="Услуга 2" onclick="toggleFullScreen(this)" />
+          <img src="aa1.jpg" alt="Услуги 2" onclick="toggleFullScreen(this)" />
           <p>Описание услуги 2</p>
         </div>
         <div class="swiper-slide">
-          <img src="aa1.jpg" alt="Услуга 3" onclick="toggleFullScreen(this)" />
+          <img src="aa1.jpg" alt="Услуги 3" onclick="toggleFullScreen(this)" />
           <p>Описание услуги 3</p>
         </div>
         <div class="swiper-slide">
-          <img src="aa1.jpg" alt="Услуга 4" onclick="toggleFullScreen(this)" />
+          <img src="aa1.jpg" alt="Услуги 4" onclick="toggleFullScreen(this)" />
           <p>Описание услуги 4</p>
         </div>
       </div>
+
+      <div class="swiper-pagination"></div>
     </div>
   </div>
 
-  <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="script.js"></script>
 </body>
