@@ -1,38 +1,39 @@
-// Инициализация Swiper
 const swiper = new Swiper('.swiper-container', {
-  slidesPerView: 'auto', // автоматически рассчитывает, сколько слайдов показывать
-  spaceBetween: 16,      // расстояние между слайдами (в пикселях)
-  grabCursor: true,      // курсор в виде "руки"
-  loop: false,           // отключаем бесконечную прокрутку
-  centeredSlides: false, // не центрируем первый слайд
-});
-
-// Функция для увеличения изображения на весь экран
-function toggleFullScreen(img) {
-  const fullScreenDiv = document.createElement('div');
-  fullScreenDiv.style.position = 'fixed';
-  fullScreenDiv.style.top = 0;
-  fullScreenDiv.style.left = 0;
-  fullScreenDiv.style.width = '100%';
-  fullScreenDiv.style.height = '100%';
-  fullScreenDiv.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
-  fullScreenDiv.style.display = 'flex';
-  fullScreenDiv.style.justifyContent = 'center';
-  fullScreenDiv.style.alignItems = 'center';
-  fullScreenDiv.style.zIndex = 9999;
-
-  const fullScreenImg = document.createElement('img');
-  fullScreenImg.src = img.src;
-  fullScreenImg.style.maxWidth = '90%';
-  fullScreenImg.style.maxHeight = '90%';
-  fullScreenImg.style.borderRadius = '10px';
-  fullScreenImg.style.boxShadow = '0 0 10px rgba(255,255,255,0.5)';
-
-  fullScreenDiv.appendChild(fullScreenImg);
-
-  fullScreenDiv.addEventListener('click', () => {
-    document.body.removeChild(fullScreenDiv);
+    loop: true,
+    spaceBetween: 10,
+    slidesPerView: 1.2,
+    centeredSlides: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      480: {
+        slidesPerView: 1.5,
+      },
+      768: {
+        slidesPerView: 2.2,
+      },
+      1024: {
+        slidesPerView: 3,
+      }
+    }
   });
-
-  document.body.appendChild(fullScreenDiv);
-}
+  
+  function toggleFullScreen(img) {
+    const fullscreenImg = document.createElement('img');
+    fullscreenImg.src = img.src;
+    fullscreenImg.style.position = 'fixed';
+    fullscreenImg.style.top = '50%';
+    fullscreenImg.style.left = '50%';
+    fullscreenImg.style.transform = 'translate(-50%, -50%)';
+    fullscreenImg.style.maxWidth = '90vw';
+    fullscreenImg.style.maxHeight = '90vh';
+    fullscreenImg.style.zIndex = 9999;
+    fullscreenImg.style.borderRadius = '10px';
+    fullscreenImg.style.boxShadow = '0 0 20px rgba(0,0,0,0.6)';
+    fullscreenImg.style.cursor = 'pointer';
+    fullscreenImg.onclick = () => document.body.removeChild(fullscreenImg);
+    document.body.appendChild(fullscreenImg);
+  }
+  
