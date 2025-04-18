@@ -1,67 +1,38 @@
-* {
-    box-sizing: border-box;
-  }
-  
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: "Arial", sans-serif;
-    background: #f5f5f5;
-    color: #222;
-    text-align: center;
-  }
-  
-  h1 {
-    font-size: 24px;
-    margin: 16px 0;
-  }
-  
-  .post-ad p {
-    font-size: 14px;
-    margin-bottom: 12px;
-  }
-  
-  .section h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
-  /* Swiper */
-  .swiper-container {
-    width: 100%;
-    padding-bottom: 40px;
-  }
-  
-  .swiper-slide {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: #fff;
-    border-radius: 12px;
-    padding: 10px;
-    margin: 0 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  }
-  
-  .swiper-slide img {
-    width: 100%;
-    max-width: 220px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-  }
-  
-  .swiper-slide img:hover {
-    transform: scale(1.05);
-  }
-  
-  .swiper-slide p {
-    margin-top: 8px;
-    font-size: 14px;
-    color: #444;
-  }
-  
-  .swiper-pagination-bullet {
-    background: #555;
-  }
-  
+// Инициализация Swiper
+const swiper = new Swiper('.swiper-container', {
+  slidesPerView: 'auto', // автоматически рассчитывает, сколько слайдов показывать
+  spaceBetween: 16,      // расстояние между слайдами (в пикселях)
+  grabCursor: true,      // курсор в виде "руки"
+  loop: false,           // отключаем бесконечную прокрутку
+  centeredSlides: false, // не центрируем первый слайд
+});
+
+// Функция для увеличения изображения на весь экран
+function toggleFullScreen(img) {
+  const fullScreenDiv = document.createElement('div');
+  fullScreenDiv.style.position = 'fixed';
+  fullScreenDiv.style.top = 0;
+  fullScreenDiv.style.left = 0;
+  fullScreenDiv.style.width = '100%';
+  fullScreenDiv.style.height = '100%';
+  fullScreenDiv.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+  fullScreenDiv.style.display = 'flex';
+  fullScreenDiv.style.justifyContent = 'center';
+  fullScreenDiv.style.alignItems = 'center';
+  fullScreenDiv.style.zIndex = 9999;
+
+  const fullScreenImg = document.createElement('img');
+  fullScreenImg.src = img.src;
+  fullScreenImg.style.maxWidth = '90%';
+  fullScreenImg.style.maxHeight = '90%';
+  fullScreenImg.style.borderRadius = '10px';
+  fullScreenImg.style.boxShadow = '0 0 10px rgba(255,255,255,0.5)';
+
+  fullScreenDiv.appendChild(fullScreenImg);
+
+  fullScreenDiv.addEventListener('click', () => {
+    document.body.removeChild(fullScreenDiv);
+  });
+
+  document.body.appendChild(fullScreenDiv);
+}
