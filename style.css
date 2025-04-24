@@ -1,93 +1,97 @@
 .box {
-    width: 100%;
-    max-width: 290px;
-    height: auto;
-    margin: 0 auto;
+  width: 100%;
+  max-width: 290px;
+  height: auto;
+  margin: 0 auto;
+  padding-left: 20px; /* Отступ слева */
+  padding-top: 20px; /* Отступ сверху */
 }
 
 .box .group {
-    position: fixed;
-    width: 292px;
-    height: 390px;
-    top: 0;
-    left: 0;
+  position: fixed;
+  width: 292px;
+  height: 390px;
+  top: 0;
+  left: 0;
 }
 
 .box .overlap {
-    position: relative;
-    width: 290px;
-    height: 390px;
+  position: relative;
+  width: 290px;
+  height: 390px;
 }
 
 .box .group-wrapper {
-    position: absolute;
-    width: 290px;
-    height: 390px;
-    top: 0;
-    left: 0;
+  position: absolute;
+  width: 290px;
+  height: 390px;
+  top: 0;
+  left: 0;
 }
 
 .box .group-x {
-    width: 292px;
-    height: 390px;
+  width: 292px;
+  height: 390px;
 }
 
 .box .overlap-group {
-    background-color: #d9d9d9;
-    border-radius: 15px;
-    position: relative;
-    width: 290px;
-    height: 390px;
+  background-color: #d9d9d9;
+  border-radius: 15px;
+  position: relative;
+  width: 290px;
+  height: 390px;
 }
 
 .box .rectangle {
-    position: absolute;
-    width: 290px;
-    height: 170px;
-    top: 0;
-    left: 0;
-    object-fit: cover;
+  position: absolute;
+  width: 290px;
+  height: 170px;
+  top: 0;
+  left: 0;
+  object-fit: cover;
 }
 
 .box .text-wrapper {
-    position: absolute;
-    top: 195px;
-    left: 12px;
-    font-family: "Inter-Bold", Helvetica;
-    font-weight: 700;
-    color: #747272;
-    font-size: 16px;
-    letter-spacing: 0;
-    line-height: normal;
-    white-space: nowrap;
+  position: absolute;
+  top: 195px;
+  left: 12px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #747272;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
 }
 
 .box .div {
-    position: absolute;
-    width: 260px;
-    top: 226px;
-    left: 12px;
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    color: #000000;
-    font-size: 16px;
-    letter-spacing: 0;
-    line-height: normal;
-    white-space: normal;
-    padding: 10px;
+  position: absolute;
+  width: 260px;
+  top: 226px;
+  left: 12px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: normal;
+  padding: 10px;
 }
 
 /* Mobile-specific styles */
 @media (max-width: 600px) {
-    .box {
-        padding: 10px;
-    }
+  .box {
+    padding: 10px; /* Отступы 10px для экранов меньше 600px */
+    padding-left: 10px;
+    padding-top: 10px;
+  }
 
-    .box .text-wrapper {
-        font-size: 14px;
-    }
+  .box .text-wrapper {
+    font-size: 14px;
+  }
 
-    .box .div {
-        font-size: 14px;
-    }
+  .box .div {
+    font-size: 14px;
+  }
 }
