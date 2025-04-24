@@ -2,10 +2,11 @@
   width: 100%;
   max-width: 290px;
   height: auto;
-  margin: 0 auto;
-  padding-left: 20px; /* Отступ слева */
-  padding-top: 20px; /* Отступ сверху */
+  margin: 20px auto; /* Отступ сверху 20px и авто-центрирование */
+  padding-left: 20px; /* Отступ слева 20px */
+  box-sizing: border-box; /* Важно для учета padding */
 }
+
 
 .box .group {
   position: fixed;
